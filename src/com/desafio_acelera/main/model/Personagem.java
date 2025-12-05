@@ -5,11 +5,20 @@ public abstract class Personagem{
     protected int hpMaximo;
     protected int hpAtual;
     protected int numeroSecreto;
+    protected int dano;
 
     public Personagem(String nome, int hpMaximo){
         this.nome = nome;
         this.hpMaximo = hpMaximo;
         this.hpAtual = hpMaximo;
+    }
+
+    public int getDano() {
+        return this.dano;
+    }
+
+    public void setDano(int dano){
+        this.dano = dano;
     }
 
     public boolean estaVivo(){

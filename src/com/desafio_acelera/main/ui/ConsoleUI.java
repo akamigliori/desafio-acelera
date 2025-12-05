@@ -3,7 +3,7 @@ package com.desafio_acelera.main.ui;
 import java.util.Scanner;
 
 public class ConsoleUI {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public ConsoleUI(){
         this.scanner = new Scanner(System.in);
@@ -51,5 +51,13 @@ public class ConsoleUI {
                 System.out.println("Por favor, digite um número válido.");
             }
         }
+    }
+
+    public String solicitarEntrada(String mensagem){
+        if(mensagem != null && !mensagem.isEmpty()){
+            System.out.println(mensagem);
+        }
+        System.out.println(">> ");
+        return scanner.nextLine();
     }
 }

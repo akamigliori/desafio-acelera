@@ -1,7 +1,7 @@
 package com.desafio_acelera.main.model;
 
 public class Inimigo extends Personagem {
-    private int quantidadeAleatoria;
+    private final int quantidadeAleatoria;
 
     public Inimigo(String nome, int hpMaximo, int quantidadeAleatoria){
         super(nome, hpMaximo);

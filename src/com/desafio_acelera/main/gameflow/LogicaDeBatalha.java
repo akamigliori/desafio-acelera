@@ -7,8 +7,8 @@ import com.desafio_acelera.main.ui.ConsoleUI;
 import java.util.Random;
 
 public class LogicaDeBatalha{
-    private ConsoleUI ui;
-    private Random aleatorio;
+    private final ConsoleUI ui;
+    private final Random aleatorio;
 
     public LogicaDeBatalha(ConsoleUI ui){
         this.ui = ui;
@@ -16,7 +16,7 @@ public class LogicaDeBatalha{
     }
 
     public boolean comecarBatalha(Heroi heroi, Inimigo inimigo){
-        ui.digitacaoLenta("\n⚔ BATALHA INICIADA ⚔: " + heroi.getNome() + " vs " + inimigo.getNome());
+        ui.digitacaoLenta("\nA batalha sangrenta ocorre... " + heroi.getNome() + " vs " + inimigo.getNome());
 
         int numSecretoHeroi = aleatorio.nextInt(heroi.getHpMaximo()) + 1;
         int numSecretoInimigo = aleatorio.nextInt(inimigo.getHpMaximo() + 1);
@@ -30,7 +30,7 @@ public class LogicaDeBatalha{
 
         while(heroi.estaVivo() && inimigo.estaVivo()){
             ui.imprimir("\n--------------------------------");
-            ui.imprimir(heroi.getNome() + "HP: " + heroi.getHpAtual() + " | " + inimigo.getNome() + " HP: " + inimigo.getHpAtual());
+            ui.imprimir(heroi.getNome() + " HP: " + heroi.getHpAtual() + " | " + inimigo.getNome() + " HP: " + inimigo.getHpAtual());
             ui.imprimir("Sua vez! Tente adivinhar o número secreto do monstro (1 a " + inimigo.getHpMaximo() + ")");
 
             int escolhaJogador = ui.lerInt("Qual número você escolhe?");
